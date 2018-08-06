@@ -36,8 +36,16 @@ public class Product {
 		return Stock;
 	}
 	
-	public void setStock(int stock) {
-		Stock = stock;
+	public String reduceStock(int quantity) {
+		
+		String result;
+		
+		if(quantity <= this.Stock) {
+			result = "Price for " + quantity + " " + this.getName() + " of " + this.getBrand() + " is " + quantity*this.Price;
+		} else {
+			result = "invalid quantity ordered, available stock: " + this.Stock;
+		}
+		return result;
 	}
 	
 	@Override
